@@ -1,0 +1,37 @@
+import java.util.Random;
+import java.util.Scanner;
+
+//custom class creation
+class guessNum{
+int com;
+int guessNum;
+public void result(){
+if(com==guessNum){
+System.out.println("You won!!!");
+}
+else if(com>guessNum){
+System.out.println("Your number is smaller, choose a greater number");
+}
+else{
+System.out.println("Your number is greater, choose a smaller number");
+}
+}
+}
+
+class game{
+public static void main(String srgs[]){
+guessNum ob = new guessNum();
+Scanner sc = new Scanner(System.in);
+Random rc = new Random();
+ob.com = rc.nextInt(100);
+int count = 0;
+
+do{
+ob.guessNum = sc.nextInt();
+ob.result();
+count++;
+}while(ob.com != ob.guessNum);
+
+System.out.println("you won in "+ count +" attempt...");
+}
+}
